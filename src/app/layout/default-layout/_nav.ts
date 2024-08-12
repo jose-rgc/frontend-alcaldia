@@ -10,6 +10,29 @@ export const navItems: INavData[] = [
       text: 'NEW'
     }
   },
+  ///---------------------------------FUNCIONARIO iNICIO
+  {
+    title: true,
+    name: 'Indice de Funcionarios'
+  },
+    {
+    name: 'Funcionarios',
+    url: '/funcionarios',
+    iconComponent: { name: 'cil-puzzle' },
+    children: [
+      {
+        name: 'Funcionario',
+        url: '/funcionarios/funcionario',
+        icon: 'nav-icon-bullet'
+      },
+      {
+        name: 'Reportes',
+        url: '/funcionarios/reportes',
+        icon: 'nav-icon-bullet'
+      },
+    ]
+    },
+   ///---------------------------------FUNCIONARIO FINAL
   {
     title: true,
     name: 'Theme'

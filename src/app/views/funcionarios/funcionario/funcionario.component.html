@@ -1,0 +1,114 @@
+<c-row ngPreserveWhitespaces>
+    <c-col xs="12">
+        <c-card class="mb-4">
+            <c-card-header>
+              <strong>Formulario de Funcionarios</strong>
+            </c-card-header>
+            <c-card-body>
+                <form cForm>
+                  <div class="mb-3">
+                    <label cLabel for="nombre">Nombre</label>
+                    <input cFormControl
+                           id="nombre"
+                           placeholder="Ingrese el Nombre"
+                           type="text"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label cLabel for="apellido">Apellido</label>
+                    <input cFormControl
+                           id="apellido"
+                           placeholder="Ingrese el apellido"
+                           type="text"
+                    />
+                  </div> 
+                  <div class="mb-3">
+                    <label cLabel for="carnet_identidad">Carnet_Identidad</label>
+                    <input cFormControl
+                           id="carnet_identidad"
+                           placeholder="Ingrese el carnet_identidad"
+                           type="number"
+                    />
+                  </div> 
+                  <div class="mb-3">
+                    <label cLabel for="zona">Zona</label>
+                    <input cFormControl
+                           id="zona"
+                           placeholder="Ingrese la zona"
+                           type="text"
+                    />
+                  </div> 
+                  <div class="mb-3">
+                    <label cLabel for="cargo">Cargo</label>
+                    <input cFormControl
+                           id="cargo"
+                           placeholder="Ingrese el cargo"
+                           type="text"
+                    />
+                  </div> 
+                  <div class="mb-3">
+                    <label cLabel for="haber">Haber</label>
+                    <input cFormControl
+                           id="haber"
+                           placeholder="Ingrese el haber"
+                           type="number"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label cLabel for="Secretaria">Secretaria</label>
+                    <select aria-label="Seleccione Secretaria" cSelect>
+                        <option></option>
+                        <option value="1">Secretaria General</option>
+                        <option value="2">Secretaria Administrativa y Financiera</option>
+                        <option value="3">Secretaria de Desarrollo Territorial y Medio Ambiente</option>
+                        <option value="3">Secretaria de Desarrollo Economico Social y Planificacion</option>
+                        <option value="3">Secretaria de Desarrollo Humano</option>
+                        <option value="3">Secretaria de Desarrollo Territorial Cultural y Patrimonial</option>
+                        <option value="3">Secretaria de Ordenamiento Territorial Urbano</option>
+                      </select>
+                  </div> 
+                  <div class="mb-3">
+                    <label cLabel for="documentos">Documentos</label>
+                    <input cFormControl
+                           id="documentos"
+                           placeholder="Ingrese los documentos"
+                           type="text"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label cLabel for="usuario">Usuario</label>
+                    <select aria-label="Seleccione usuario" cSelect>
+                        <option>Open this select menu</option>
+                        <option value="1">Julia</option>
+                        <option value="2">Esteban</option>
+                        <option value="3">Esther</option>
+                      </select>
+                  </div> 
+                  <button cButton class="me-1" color="primary" type="submit">
+                    Guardar
+                  </button>
+                </form>
+            </c-card-body>
+          </c-card>
+    </c-col>
+    <c-col xs="12">
+        <table cTable>
+            <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Usuario</th>
+              <th scope="col">Acciones</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td><button cButton color="warning" variant="outline">Editar</button> <button cButton color="danger" variant="outline">Eliminar</button></td>
+            </tr>
+            </tbody>
+          </table>
+    </c-col>
+</c-row>

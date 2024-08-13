@@ -11,7 +11,9 @@
                     <input cFormControl
                            id="nombre"
                            placeholder="Ingrese el Nombre"
+                           [(ngModel)] = "funcionarioModelo.nombre"
                            type="text"
+                           name="nombre"
                     />
                   </div>
                   <div class="mb-3">
@@ -20,6 +22,8 @@
                            id="apellido"
                            placeholder="Ingrese el apellido"
                            type="text"
+                           name="apellido"
+                           [(ngModel)] = "funcionarioModelo.apellido"
                     />
                   </div> 
                   <div class="mb-3">
@@ -28,6 +32,8 @@
                            id="carnet_identidad"
                            placeholder="Ingrese el carnet_identidad"
                            type="number"
+                           name="carnet_identidad"
+                           [(ngModel)] = "funcionarioModelo.carnet_identidad"
                     />
                   </div> 
                   <div class="mb-3">
@@ -36,6 +42,8 @@
                            id="zona"
                            placeholder="Ingrese la zona"
                            type="text"
+                           name="zona"
+                           [(ngModel)] = "funcionarioModelo.zona"
                     />
                   </div> 
                   <div class="mb-3">
@@ -44,6 +52,8 @@
                            id="cargo"
                            placeholder="Ingrese el cargo"
                            type="text"
+                           name="cargo"
+                           [(ngModel)] = "funcionarioModelo.cargo"
                     />
                   </div> 
                   <div class="mb-3">
@@ -52,20 +62,19 @@
                            id="haber"
                            placeholder="Ingrese el haber"
                            type="number"
+                           name="haber"
+                           [(ngModel)] = "funcionarioModelo.haber"
                     />
                   </div>
                   <div class="mb-3">
                     <label cLabel for="Secretaria">Secretaria</label>
-                    <select aria-label="Seleccione Secretaria" cSelect>
-                        <option></option>
-                        <option value="1">Secretaria General</option>
-                        <option value="2">Secretaria Administrativa y Financiera</option>
-                        <option value="3">Secretaria de Desarrollo Territorial y Medio Ambiente</option>
-                        <option value="3">Secretaria de Desarrollo Economico Social y Planificacion</option>
-                        <option value="3">Secretaria de Desarrollo Humano</option>
-                        <option value="3">Secretaria de Desarrollo Territorial Cultural y Patrimonial</option>
-                        <option value="3">Secretaria de Ordenamiento Territorial Urbano</option>
-                      </select>
+                    <input cFormControl
+                           id="Secretaria"
+                           placeholder="Ingrese la Secretaria"
+                           type="text"
+                           name="Secretaria"
+                           [(ngModel)] = "funcionarioModelo.Secretaria"
+                    />
                   </div> 
                   <div class="mb-3">
                     <label cLabel for="documentos">Documentos</label>
@@ -73,18 +82,20 @@
                            id="documentos"
                            placeholder="Ingrese los documentos"
                            type="text"
+                           name="documentos"
+                           [(ngModel)] = "funcionarioModelo.documentos"
                     />
                   </div>
                   <div class="mb-3">
                     <label cLabel for="usuario">Usuario</label>
-                    <select aria-label="Seleccione usuario" cSelect>
-                        <option>Open this select menu</option>
-                        <option value="1">Julia</option>
-                        <option value="2">Esteban</option>
-                        <option value="3">Esther</option>
-                      </select>
-                  </div> 
-                  <button cButton class="me-1" color="primary" type="submit">
+                    <input cFormControl
+                           id="usuario"
+                           type="text"
+                           name="usuario"
+                           [(ngModel)] = "funcionarioModelo.usuario"
+                    />
+                </div>
+                  <button (click) = "guardarFuncionario()" cButton class="me-1" color="primary" type="submit">
                     Guardar
                   </button>
                 </form>
@@ -97,17 +108,24 @@
             <tr>
               <th scope="col">#</th>
               <th scope="col">Nombre</th>
-              <th scope="col">Usuario</th>
+              <th scope="col">Apellido</th>
+              <th scope="col">Cargo</th>
               <th scope="col">Acciones</th>
             </tr>
             </thead>
             <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td><button cButton color="warning" variant="outline">Editar</button> <button cButton color="danger" variant="outline">Eliminar</button></td>
-            </tr>
+              @for ( funcionario of listaFuncionarios; track funcionario; ) {
+                <tr>
+                  <th scope="row">1</th>
+                  <td>{{funcionario.nombre}}</td>
+                  <td>{{funcionario.apellido}}</td>
+                  <td>{{funcionario.cargo}}</td>
+                  <td>
+                    <button cButton color="warning" variant="outline"(click)="verFuncionario(funcionario)">Editar</button> 
+                    <button (click)="eliminarFuncionario(funcionario)" cButton color="danger" variant="outline">Eliminar</button></td>
+                </tr>
+              }
+
             </tbody>
           </table>
     </c-col>
